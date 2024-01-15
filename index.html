@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Caprasimo&family=Instrument+Serif&family=Kanit:wght@300&family=Lexend:wght@900&family=Pacifico&family=Tektur&family=Titillium+Web:wght@200&display=swap" rel="stylesheet">
+    
+    <style>
+      body{
+        padding: 0;
+        margin: 0;
+      }
+        .list-group{
+            display: flex;
+            flex-direction: row;
+        }
+        .dropdown-item:hover{
+          background-color: beige;
+          color: black;
+  }
+        .btn-outline-dark:hover {
+            background-color: rgb(146, 144, 144);
+            color: azure;
+        
+        }
+
+        .hovereffect {
+width:100%;
+height:100%;
+float:left;
+overflow:hidden;
+position:relative;
+text-align:center;
+cursor:default;
+}
+
+.hovereffect .overlay {
+width:100%;
+height:100%;
+position:absolute;
+overflow:hidden;
+top:0;
+left:0;
+opacity:0;
+background-color:rgba(0,0,0,0.5);
+-webkit-transition:all .4s ease-in-out;
+transition:all .4s ease-in-out
+}
+
+.hovereffect img {
+display:block;
+position:relative;
+-webkit-transition:all .4s linear;
+transition:all .4s linear;
+}
+
+.hovereffect h2 {
+text-transform:uppercase;
+color:#fff;
+text-align:center;
+position:relative;
+font-size:17px;
+background:rgba(0,0,0,0.6);
+-webkit-transform:translatey(-100px);
+-ms-transform:translatey(-100px);
+transform:translatey(-100px);
+-webkit-transition:all .2s ease-in-out;
+transition:all .2s ease-in-out;
+padding:10px;
+}
+
+.hovereffect a.info {
+text-decoration:none;
+display:inline-block;
+text-transform:uppercase;
+color:#fff;
+border:1px solid #fff;
+background-color:transparent;
+opacity:0;
+filter:alpha(opacity=0);
+-webkit-transition:all .2s ease-in-out;
+transition:all .2s ease-in-out;
+margin:50px 0 0;
+padding:7px 14px;
+}
+
+.hovereffect a.info:hover {
+box-shadow:0 0 5px #fff;
+}
+
+.hovereffect:hover img {
+-ms-transform:scale(1.2);
+-webkit-transform:scale(1.2);
+transform:scale(1.2);
+}
+
+.hovereffect:hover .overlay {
+opacity:1;
+filter:alpha(opacity=100);
+}
+
+.hovereffect:hover h2,.hovereffect:hover a.info {
+opacity:1;
+filter:alpha(opacity=100);
+-ms-transform:translatey(0);
+-webkit-transform:translatey(0);
+transform:translatey(0);
+}
+
+.hovereffect:hover a.info {
+-webkit-transition-delay:.2s;
+transition-delay:.2s;
+} 
+    
+
+
+    </style>
+</head>
+<body>
+    <!-- navbar -->
+    <nav class="navbar navbar-dark bg-warning"> 
+   
+      <div class="container-fluid">
+    
+        <h3 class=" navbar-brand text-dark mt-1"><a class="text-dark " style="text-decoration: none;" tabindex="-1"  href="http://">Evolutions of computer</a></h3>
+      
+            
+    
+        
+        <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+           
+          
+            
+            <span class="navbar-toggler-icon">
+                
+            </span>
+        </button>
+
+      </div>  
+
+        <div class="collapse mb-3 bg-warning  text-center" id="navbarToggleExternalContent" data-bs-theme="dark" style="  width: 100%;">
+          <div class="offcanvas-body">
+              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <li class="nav-item">
+                  <a class="nav-link active fw-bold" aria-current="page" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active fw-bold" href="#">Watch Video</a>
+                </li>
+                <li class="nav-item dropdown bg-warning rounded ">
+                  <a class="nav-link dropdown-toggle bg-warning fw-bold active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    BLOCKS
+                  </a>
+                  <ul class="dropdown-menu bg-warning border-1 text-center">
+                    <li><a class="dropdown-item fw-bold rounded"   href="#">Menu Pages</a></li>
+                    <li><a class="dropdown-item fw-bold rounded"  href="#">images & videos</a></li>
+                    <li><a class="dropdown-item fw-bold rounded"  href="#">Features</a></li>
+                    <li><a class="dropdown-item fw-bold rounded"  href="#">Info</a></li>
+                    <li><a class="dropdown-item fw-bold rounded"  href="#">Terms&Testimonials</a></li>
+                    <li><a class="dropdown-item fw-bold rounded"  href="#">Forms & Maps</a></li>
+                    <li><a class="dropdown-item fw-bold rounded"  href="#">pricing Tables </a></li>
+                    <li><a class="dropdown-item fw-bold rounded"  href="#">Tables</a></li>
+                    <li><a class="dropdown-item fw-bold rounded"  href="#">Social</a></li>
+                    <li>
+                      <hr class="dropdown-divider bg-warning">
+                    </li>
+                    <li><a class="dropdown-item fw-bold"  href="#">Something else here</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item dropdown bg-warning rounded ">
+                  <a class="nav-link active dropdown-toggle bg-warning fw-bold" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    DEMO PAGE
+                  </a>
+                  <ul class="dropdown-menu bg-warning border-1 text-center">
+                    <li><a class="dropdown-item fw-bold rounded"   href="#">headphone shop</a></li>
+                    <li><a class="dropdown-item fw-bold rounded"  href="#">shoe shop</a></li>
+                   
+                    <li><a class="dropdown-item fw-bold"  href="#">cafe</a></li>
+                  </ul>
+                </li>
+
+              </ul>
+            </div>
+  <!-- footer -->
+  <footer class="bg-warning text-center">
+    <!-- Grid container -->
+    <div class="container p-4 pb-0">
+      <!-- Section: Social media -->
+      <section class="mb-4">
+        <!-- Facebook -->
+        <a
+        data-mdb-ripple-init
+          class="btn text-white btn-floating m-1"
+          style="background-color: #3b5998;"
+          href="#!"
+          role="button"
+          ><i class="fab fa-facebook-f"></i
+        ></a>
+  
+        <!-- Twitter -->
+        <a
+          data-mdb-ripple-init
+          class="btn text-white btn-floating m-1"
+          style="background-color: #55acee;"
+          href="#!"
+          role="button"
+          ><i class="fab fa-twitter"></i
+        ></a>
+  
+        <!-- Google -->
+        <a
+          data-mdb-ripple-init
+          class="btn text-white btn-floating m-1"
+          style="background-color: #dd4b39;"
+          href="#!"
+          role="button"
+          ><i class="fab fa-google"></i
+        ></a>
+  
+        <!-- Instagram -->
+        <a
+          data-mdb-ripple-init
+          class="btn text-white btn-floating m-1"
+          style="background-color: #ac2bac;"
+          href="#!"
+          role="button"
+          ><i class="fab fa-instagram"></i
+        ></a>
+  
+        <!-- Linkedin -->
+        <a
+          data-mdb-ripple-init
+          class="btn text-white btn-floating m-1"
+          style="background-color: #0082ca;"
+          href="#!"
+          role="button"
+          ><i class="fab fa-linkedin-in"></i
+        ></a>
+        <!-- Github -->
+        <a
+          data-mdb-ripple-init
+          class="btn text-white btn-floating m-1"
+          style="background-color: #810606cc;"
+          href="#!"
+          role="button"
+          ><i class="fab fa-github"></i
+        ></a>
+      </section>
+      <!-- Section: Social media -->
+    </div>
+    <!-- Grid container -->
+  
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(236, 8, 8, 0);">
+      <button type="button" class="btn btn-light fw-bolder"
+        style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
+  JOIN NOW
+</button>
+
+    </div>
+    <!-- Copyright -->
+  </footer>
+     <!--  -->
+      </div>
+      </nav> 
+
+     <!-- Background image -->
+<div class="bg-image"style="background-image: url('https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aGVhZHBob25lc3xlbnwwfHwwfHx8MA%3D%3D'); height: 100vh;">
+
+  <div class="bg-text text-center " style="padding-top:350px ; padding-right: 630px;">
+<h6 class="fw-bolder me-4" style="padding-left: 25px;  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;color: black; text-align: left;">THINKING OF BUYING A HEADPHONE?</h6>
+<h1 class="" style="font-family: 'Caprasimo', serif; color: black; padding-left: 25px; text-align: left; font-size: 50px;">Welcome to our <br> Headphones shop</h1>
+<button type="button" class="btn btn-outline-dark rounded rounded-4 fw-bolder " style="margin-right: 560px;">Shop Now</button>
+  </div>
+
+
+</div>
+<!-- Background image -->
+       
+<!-- first-banner  -->
+
+<div class="container p-4">
+
+  <h2 class="mb-4" style="font-weight: bolder;">Find a quality and right Headphones is not easy</h2>
+  <p class="" style="text-align: justify; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
+    <span class="fw-bold">Lorem ipsum dolor</span> sit amet consectetur adipisicing elit. Numquam distinctio alias voluptate, explicabo est, nulla voluptatem eius itaque eligendi porro minima laboriosam! 
+                    Suscipit voluptates laudantium magnam molestias error voluptatem aspernatur.
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. At cum ratione doloremque unde, numquam distinctio molestias, adipisci, vero ab cumque sapiente? Repellendus consequuntur laborum, accusantium sit quod eaque perferendis doloremque.
+  </p>
+
+</div>
+
+<!--  -->
+
+<!-- second-banner -->
+
+ <div class="container-fluid bg-warning p-3">
+
+  <h3 class="text-center fw-bold " style="color: beige;">We will help you to choose the best headphones</h3>
+
+ </div>
+<!--  -->
+
+<!-- sliders -->
+
+<div class="container-fluid p-4 " style=" background-color: #3b5998; height: 600px; padding-bottom: -400px;">
+
+  <h4 class="fw-bolder">Hottest headphones of the Month</h4>
+
+
+  <div id="carouselExampleControls" class="carousel carousel-dark slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active rounded rounded-4">
+        <div class="card-wrapper container-sm d-flex  justify-content-around rounded rounded-4 " style="padding: 80px;">
+        <div class="card rounded rounded-4 " style="width: 18rem; height: 24rem;">
+          <span class="badge bg-warning text-dark m-2" style="position: absolute;">HEADPHONES</span>
+    <img src="https://www.lifewire.com/thmb/SdevVA5_XLvh5DdPPN8tTRoWSYM=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Skullcandy_All_Love_Crusher_Hero-211c217df76f4815ac71b8887ebb2358.jpeg" class="card-img-top" alt="...">
+    
+    <div class="card-body bg-warning rounded rounded-1">
+      <h5 class="card-title fw-bolder " style="font-size: 15px;" >SkullCandy Colorfull liM edtn</h5>
+      <h5 class="card-content" style="font-size: 16px;">Headphones · Crusher® ANC 2 Sensory Bass Headphones with Active Noise Canceling </h5>
+      <i class="fa-solid fa-star fa-lg" style="color: #000000;"></i>
+      <i class="fa-solid fa-star fa-lg" style="color: #000000;"></i>
+      <i class="fa-solid fa-star fa-lg" style="color: #000000;"></i>
+      <i class="fa-solid fa-star fa-lg" style="color: #000000;"></i>
+      <i class="fa-regular fa-star fa-xl" style="color: #000000;"></i>
+      <br>
+      <button type="button" class="btn btn-dark rounded rounded-4 mt-2 fw-bolder">BUY</button>
+      
+    </div>
+  </div>
+  <div class="card  " style="width: 18rem; height: 20rem;">
+    <span class="badge bg-warning text-dark m-2" style="position: absolute;">HEADPHONES</span>
+    <img src="https://www.zdnet.com/a/img/resize/6e1df27ee9c36f9c6dc0c7182ce4437a35541d5a/2023/02/22/3f0b444b-eb28-4825-9925-9c24ea8afdfd/sonyonearfinished.jpg?auto=webp&width=1280" class="card-img-top" alt="...">
+    <div class="card-body bg-warning rounded rounded-1 ">
+      <h5 class="card-title fw-bolder" style="font-size: 15px;" >SONY wh-1000XM5</h5>
+      <h5 class="card-content" style="font-size: 16px;"> Be at one with your music with our headphones, including Bluetooth® headphones, wireless, noise cancel...</h5>
+      <i class="fa-solid fa-star fa-lg" style="color: #050505;"></i>
+      <i class="fa-solid fa-star fa-lg" style="color: #000000;"></i>
+      <i class="fa-solid fa-star fa-lg" style="color: #000000;"></i>
+      <i class="fa-solid fa-star fa-lg" style="color: #0f0f0f;"></i>
+      <i class="fa-regular fa-star fa-xl" style="color: #000000;"></i>
+      <br>
+      <button type="button" class="btn btn-dark rounded rounded-4 mt-2 fw-bolder">BUY</button>
+      
+    </div>
+  </div>
+
+  <div class="card  " style="width: 18rem; height: 20rem;">
+    <span class="badge bg-warning text-dark m-2" style="position: absolute;">HEADPHONES</span>
+    <img src="https://www.lifewire.com/thmb/SdevVA5_XLvh5DdPPN8tTRoWSYM=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Skullcandy_All_Love_Crusher_Hero-211c217df76f4815ac71b8887ebb2358.jpeg" class="card-img-top" alt="...">
+    <div class="card-body bg-warning rounded rounded-1 ">
+      <h5 class="card-title fw-bolder" style="font-size: 15px;" >SkullCandy Colorfull liM edtn</h5>
+      <h5 class="card-content" style="font-size: 16px;">Headphones · Crusher® ANC 2 Sensory Bass Headphones with Active Noise Canceling </h5>
+      <i class="fa-solid fa-star fa-lg" style="color: #000000;"></i>
+      <i class="fa-solid fa-star fa-lg" style="color: #000000;"></i>
+      <i class="fa-solid fa-star fa-lg" style="color: #000000;"></i>
+      <i class="fa-solid fa-star fa-lg" style="color: #000000;"></i>
+      <i class="fa-solid fa-star fa-lg" style="color: #000000;"></i>
+      <br>
+      <button type="button" class="btn btn-dark rounded rounded-4 mt-2 fw-bolder">BUY</button>
+      
+    </div>
+  </div>
+          
+</div>
+</div>
+</div>
+</div>
+ </div>
+<!--  -->
+
+<!-- Grid-images -->
+
+<div class="container mt-4 p-4 rounded rounded-4 p-4 " style="background-color: rgba(156, 117, 19, 0.089);">
+
+  
+  <h3 class="fw-bolder" style="color: #000000;">Meet Our New Headphones</h3>
+  <br>
+  <br>
+  <br>
+
+  <div class="row m-4 p-2 ">
+
+    <div class="col-3 rounded-4 ">
+  
+  
+      <div class="hovereffect">
+        <img class="img-responsive" src="data:image/jpeg;base64,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" width="340px" height="320px" alt="">
+        <div class="overlay">
+           <h2>SONY</h2>
+           <a class="info" href="#">SHOP THIS</a>
+        </div>
+    </div>
+    
+     
+      </div>
+        <div class="col-3 rounded-4 ">
+
+      <div class="hovereffect">
+        <img class="img-responsive" src="https://media.istockphoto.com/id/1219983650/photo/wireless-white-headphones-on-yellow-background-music-concept-earphones-on-yellow-background.jpg?s=170667a&w=0&k=20&c=AonTvQ6M6-SjH7xRu0PGQ-qEqL4o2Yb72gsa1DaRSXw=" width="320px" height="350px"  alt="">
+        <div class="overlay">
+           <h2>V-MODA</h2>
+           <a class="info" href="#">SHOP THIS</a>
+        </div>
+    </div>
+
+    </div>
+
+    <div class="col-3 rounded-4 ">
+
+      <div class="hovereffect">
+        <img class="img-responsive" src="https://www.boat-lifestyle.com/cdn/shop/products/06bd8915-8db7-4575-9558-c97bf050d8d7.png?v=1625044994" width="320px" alt="">
+        <div class="overlay">
+           <h2>JBL</h2>
+           <a class="info" href="#">SHOP THIS</a>
+        </div>
+    </div>
+
+
+     
+      </div>
+
+      <div class="col-3 rounded-4">
+
+        <div class="hovereffect">
+          <img class="img-responsive" src="https://5.imimg.com/data5/XC/FE/OF/SELLER-8758047/neumann-ndh-20-studio-headphone-for-monitoring.jpg" width="320px"  alt="">
+          <div class="overlay">
+             <h2>nEumann</h2>
+             <a class="info" href="#">SHOP THIS</a>
+          </div>
+      </div>
+  
+  
+       
+        </div>
+
+    </div>
+    <br>
+
+    <div class="row p-2">
+
+      <div class="col-3  ">
+        <div class="hovereffect">
+          <img class="img-responsive" src="https://conceptkart.com/cdn/shop/products/Concept-Kart-KZ-T10-Wireless-Headphone-Black-3.jpg?v=1669307353" width="320px" height="300px" alt="">
+          <div class="overlay">
+             <h2>KZ T10</h2>
+             <a class="info" href="#">SHOP THIS</a>
+          </div>
+      </div>
+      
+       
+        </div>
+          <div class="col-3 ">
+  
+        <div class="hovereffect">
+          <img class="img-responsive" src="https://hifinage.com/cdn/shop/products/7_5_13.jpg?v=1591075362" width="320px" height="300px"  alt="">
+          <div class="overlay">
+             <h2>HIFIMAN</h2>
+             <a class="info" href="#">SHOP THIS</a>
+          </div>
+      </div>
+  
+      </div>
+  
+      <div class="col-3">
+  
+        <div class="hovereffect  ">
+          <img class="img-responsive" src="https://images.hindustantimes.com/tech/img/2023/12/06/960x540/headphones_1701867249429_1701867256081.png" width="320px" height="300px" alt="">
+          <div class="overlay">
+             <h2>SENNHEISER</h2>
+             <a class="info" href="#">SHOP THIS</a>
+          </div>
+      </div>
+  
+  
+       
+        </div>
+  
+        <div class="col-3">
+  
+          <div class="hovereffect ">
+            <img class="img-responsive" src="https://m.media-amazon.com/images/I/71RZGh8md2L.AC_SS300.jpg" width="320px" alt="">
+            <div class="overlay">
+               <h2>MEzZe 99</h2>
+               <a class="info" href="#">SHOP THIS</a>
+            </div>
+        </div>
+    
+    
+         
+          </div>
+  
+      </div>
+
+   
+    
+    </div>
+<!-- banner-4 -->
+    <div class="container-fluid mt-4 bg-warning  " style="padding: 25px;">
+      
+  <p class="text-white ps-4 fw-bold">HURRY UP LIMITED OFFER</p>
+  <h3 class="text-white ps-4 fw-bolder">
+    Like it? Pre-Order and get a discound <span class="btn-group"style="  display: inline-block;; ">
+      <button type="button"  class="btn btn-light rounded rounded-4 fw-bolder" style="margin-left: 600px;">SHOP</button>
+    </span> 
+  </h3>
+
+
+</div>
+ 
+<!--  -->
+
+<!-- banner-5 -->
+<div class="container-fluid mt-4">
+
+  <h3 class="text-center fw-bolder">why do you have to buy Headphones from Us ?</h3>
+
+
+  <div class="row mt-4 ">
+    <div class="col-sm-4">
+      <div class="card p-4 border border-warning">
+        <img style="margin-left: 60px;" src="https://as1.ftcdn.net/v2/jpg/02/90/70/56/1000_F_290705685_r14NBlsyRp6SHYmH8lUEvFqeizvXiOgP.jpg" height="150px" width="200px" alt="" srcset="">
+       
+        <div class="card-body ">
+          <h5 class="card-title fw-bolder">HIGH QUALITY</h5>
+          <p class="card-text fw-bolder">With supporting text below as a natural lead-in to additional content.</p>
+          <a href="#" class="text-warning">KNOW MORE</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="card p-4 border border-warning ">
+        <img style="margin-left: 70px;" src="https://as2.ftcdn.net/v2/jpg/02/96/05/47/1000_F_296054789_YMO4C0729peNgQCt4FNCDr3nBoHLBqQZ.jpg" height="150px" width="200px" alt="" srcset="">
+        <div class="card-body">
+          <h5 class="card-title fw-bolder">ORIGINAL PRODUCT</h5>
+          <p class="card-text fw-bolder">With supporting text below as a natural lead-in to additional content.</p>
+          <a href="#" class="text-warning">KNOW MORE</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="card border border-warning">
+        <img style="margin-left:90px; margin-top:30px;" src="https://www.masalta.co/images/warranty.png" height="150px" width="200px" alt="" srcset="">
+       
+        <div class="card-body"> 
+          <h5 class="card-title fw-bolder">WARRENTY ASSURANCE</h5>
+       
+          <p class="card-text fw-bolder">With supporting text below as a natural lead-in to additional content.</p>
+          <a href="#" class="text-warning">KNOW MORE</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+<!--  -->
+
+<!-- banner-6 -->
+
+<div class="container-fluid bg-warning " style="margin-top: 50px;">
+
+  <p class="fw-bold text-center mt-2 ">STILL NOT CONVINCED</p>
+  <h1 class="fw-bolder text-center">Visit us see yourself!</h1>
+</div>
+<div class="container-fluid"> 
+ <iframe class="ms-3 " src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d38023.961656698535!2d-2.3241444857124374!3d53.441690619082046!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487bae72e7e47f69%3A0x6c930e96df4455fe!2sOld%20Trafford!5e0!3m2!1sen!2sin!4v1705138800856!5m2!1sen!2sin" width="1300" height="450" style="border:0; background-size: cover;" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+</div>
+ 
+<!-- footer -->
+ 
+<footer class="text-center bg-body-tertiary">
+  <!-- Grid container -->
+  <div class="container pt-4">
+    <!-- Section: Social media -->
+    <img style="display: inline-block; margin-right: 50px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6XfNsXoJllgwpB_twWOoD3yaSUt8bYH-1ATcYISs2j8aYBOm26vD0F5dcOkrRFBR57oo&usqp=CAU" height="80px" alt="">
+   <p class="fw-bolder" style="display: inline-block; margin-top: 20px;"  >© 2020 All the right are reserved for Terms & Use of Privacy <br>Policy</p> 
+   <section class="mb-4 ms-4" style="display: inline-block; ">
+
+      
+      <!-- Facebook -->
+      <a
+        data-mdb-ripple-init
+        class="btn btn-link btn-floating btn-sm text-body m-1 bg-warning rounded-4 "
+        href="#!"
+        role="button"
+        data-mdb-ripple-color="dark"
+        ><i class="fab fa-facebook-f"></i
+      ></a>
+
+      <!-- Twitter -->
+      <a
+        data-mdb-ripple-init
+        class="btn btn-link btn-floating btn-sm text-body m-1 bg-warning rounded-4 "
+        href="#!"
+        role="button"
+        data-mdb-ripple-color="dark"
+        ><i class="fab fa-twitter"></i
+      ></a>
+
+      <!-- Google -->
+      <a
+        data-mdb-ripple-init
+        class="btn btn-link btn-floating btn-sm text-body m-1 bg-warning rounded-4 "
+        href="#!"
+        role="button"
+        data-mdb-ripple-color="dark"
+        ><i class="fab fa-google"></i
+      ></a>
+
+      <!-- Instagram -->
+      <a
+        data-mdb-ripple-init
+        class="btn btn-link btn-floating btn-sm text-body m-1 bg-warning rounded-4 "
+        href="#!"
+        role="button"
+        data-mdb-ripple-color="dark"
+        ><i class="fab fa-instagram"></i
+      ></a>
+
+      <!-- Linkedin -->
+      <a
+        data-mdb-ripple-init
+        class="btn btn-link btn-floating btn-sm text-body m-1 bg-warning rounded-4"
+        href="#!"
+        role="button"
+        data-mdb-ripple-color="warning"
+        ><i class="fab fa-linkedin"></i
+      ></a>
+      <!-- Github -->
+      <a
+        data-mdb-ripple-init
+        class="btn btn-link btn-floating btn-sm text-body m-1 bg-warning rounded-4 "
+        href="#!"
+        role="button"
+        data-mdb-ripple-color="dark"
+        ><i class="fab fa-github"></i
+      ></a>
+    </section>
+    <!-- Section: Social media -->
+  </div>
+  <!-- Grid container -->
+
+  <!-- Copyright -->
+
+  <!-- Copyright -->
+</footer>
+
+
+
+
+<!--  -->
+
+
+       
+      
+
+  
+   
+</body>
+</html>
